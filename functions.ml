@@ -1,11 +1,11 @@
 
 (** To define a function we use
-    let <name> <args> = <body>*)
+    let <name> <args> = <expr> *)
 let sum a b = a + b
 
 
 (** Defining plustwo as the
-    partial application of [sun 2] *)
+    partial application of [sum 2] *)
 let plustwo = sum 2
 
 
