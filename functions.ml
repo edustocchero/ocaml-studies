@@ -46,6 +46,44 @@ let a_result =
   |> sum 3
 
 
+
+
+(** Here we have a polimorphic function.
+    [val id : 'a -> 'a]. ['a] is a type
+    variable for an unknown type *)
+let id x = x
+
+
+(** Here we specified that the type ['a]
+    is an [int]. Then we need to change
+    all occurences of ['a] to [int] *)
+let id_int' : int -> int = id
+
+
+
+
+(** Function with labeled arguments *)
+let foo ~name1:a ~name2:b = a + b
+
+(** Calling a function with labeled
+    arguments *)
+let _ =
+  foo ~name1:1 ~name2:2
+
+(** Also works *)
+let foo ~name1 ~name2 = name1 + name2
+
+(** We also can type annotate *)
+let foo ~name1:(a : int) ~name2:(b : int) = a + b
+
+(** Optional arguments have [?]
+    before the name *)
+let foo ?name:(a = 0) b = a + b
+
+
+
+
+
 let () =
   print_int myresult;
   print_newline ()
