@@ -82,6 +82,35 @@ let foo ?name:(a = 0) b = a + b
 
 
 
+(** The addition operator has type
+    [int -> int -> int]. Putting it
+    inside the parentheses we can
+    prefix the operator *)
+let add_five = ( + ) 5
+
+
+(** We can define new infix operators *)
+let ( ^^ ) a b = max a b
+
+let _ = 2 ^^ 3
+
+
+
+
+
+(** Example of tail call recursive
+    function *)
+let r_fact n =
+  let rec aux u acc =
+    if u = 0 then
+      acc
+    else
+      aux (u - 1) (u * acc)
+  in
+  aux n 1
+
+
+
 
 
 let () =
