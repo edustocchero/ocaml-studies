@@ -12,6 +12,8 @@ let rec plus x y =
   | x, Zero -> x
   | x, Succ s -> Succ (plus x s)
 
+let ( +! ) = plus
+
 (**
 
 plus (Succ Zero) (Succ (Succ Zero))    matches x, Succ s
