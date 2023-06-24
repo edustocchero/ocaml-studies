@@ -11,6 +11,8 @@ let is_empty = function
   | Empty -> true
   | _ -> false
 
+(** This is O(n), we need to recur n times to
+    reach the end and insert a new item. *)
 let rec push q item =
   match q with
   | Empty -> Ctor (item, Empty)
